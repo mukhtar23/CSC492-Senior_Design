@@ -1,0 +1,46 @@
+<html>
+	<head>
+		<script src="https://code.angularjs.org/1.6.8/angular.min.js"></script>
+		<script src="/js/app.js"></script>
+	</head>
+	<body ng-app="ecoprtApp" ng-controller="edgesCtrl">
+		<nav class>
+			<a href="home.html">Home</a>
+			<a href="vehicles.html">Vehicles</a>
+			<a href="rides.html">Rides</a>
+			<a href="nodes.html">Nodes</a>
+			<a href="edges.html">Edges</a>
+		</nav>
+		<ul>
+			<li ng-repeat="edge in edges">
+				{{edge}}
+			</li>
+			
+			startingNode: <input type="text" ng-model="newEdge.startingNode"><br/>
+			endingNode: <input type="text" ng-model="newEdge.endingNode"><br/>
+			distance: <input type="number" ng-model="newEdge.distance"><br/>
+			<p></p>
+            <p>Waypoints</p>
+            waypoint Longtitude: <input type="number" ng-model="newEdge.waypoints[0].coordinates[0]"><br/>
+			waypoint Latitude: <input type="number" ng-model="newEdge.waypoints[0].coordinates[1]"><br/>
+			speed: <input type="number" ng-model="newEdge.waypoints[0].speed"><br/>
+            steeringAngle: <input type="number" ng-model="newEdge.waypoints[0].steeringAngle"><br/>
+            headingAngle: <input type="number" ng-model="newEdge.waypoints[0].headingAngle"><br/>
+            tick: <input type="number" ng-model="newEdge.waypoints[0].tick"><br/>
+            timeStamp: <input type="date" ng-model="newEdge.waypoints[0].timeStamp"><br/>
+            actuator: <input type="number" ng-model="newEdge.waypoints[0].actuator"><br/>
+			<!-- motorControlFlags: <input type="number" ng-model="newEdge.waypoints[0].motorControlFlags[0]"><br/> -->
+			motorControlFlags: <input type="checkbox" ng-model="newEdge.waypoints[0].motorControlFlags[0]"><br/>
+            motorControlFlags: <input type="checkbox" ng-model="newEdge.waypoints[0].motorControlFlags[1]"><br/>
+            motorControlFlags: <input type="checkbox" ng-model="newEdge.waypoints[0].motorControlFlags[2]"><br/>
+            motorControlFlags: <input type="checkbox" ng-model="newEdge.waypoints[0].motorControlFlags[3]"><br/>
+            motorControlFlags: <input type="checkbox" ng-model="newEdge.waypoints[0].motorControlFlags[4]"><br/>
+            motorControlFlags: <input type="checkbox" ng-model="newEdge.waypoints[0].motorControlFlags[5]"><br/>
+            motorControlFlags: <input type="checkbox" ng-model="newEdge.waypoints[0].motorControlFlags[6]"><br/>
+            motorControlFlags: <input type="checkbox" ng-model="newEdge.waypoints[0].motorControlFlags[7]"><br/>
+            motorThrottle: <input type="number" ng-model="newEdge.waypoints[0].motorThrottle"><br/>
+			
+			<button type="button" ng-click="addEdge()" type="submit" >Add Edge</button>
+		</ul>
+	</body>
+</html>
